@@ -1,0 +1,37 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+public class MyGdxGame extends ApplicationAdapter {
+	SpriteBatch batch;
+	Texture img;
+	GameRenderer renderer;
+	GameWorld gameWorld;
+	GameController gameController;
+
+	@Override
+	public void create () {
+		batch = new SpriteBatch();
+		img = new Texture("badlogic.jpg");
+		gameWorld = new GameWorld(500,500);
+		renderer = new GameRenderer(gameWorld);
+		gameController = new GameController(gameWorld, renderer);
+		Gdx.input.setInputProcessor(gameController);
+	}
+
+	@Override
+	public void render () {
+		gameWorld.update();
+		renderer.render();
+	}
+	
+	@Override
+	public void dispose () {
+		batch.dispose();
+		img.dispose();
+	}
+}
