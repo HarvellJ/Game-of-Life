@@ -27,10 +27,7 @@ public class GameRenderer {
 	float w;
 	float h;
 
-	Texture img;
-
 	public GameRenderer(GameWorld gameWorld) {
-		img = new Texture("badlogic.jpg");
 
 		// game world
 		this.gameWorld = gameWorld;
@@ -87,7 +84,6 @@ public class GameRenderer {
 					shapeRendererHUD.rect(colPosition, rowPosition, boxWidth, boxHeight);
 					shapeRendererHUD.end();
 					colPosition += boxWidth;
-					// spriteBatch.draw(img, 0, 0);
 				} else {
 					colPosition += boxWidth;
 				}

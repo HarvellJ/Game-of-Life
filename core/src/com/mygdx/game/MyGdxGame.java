@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture img;
 	GameRenderer renderer;
 	GameWorld gameWorld;
 	GameController gameController;
@@ -16,7 +15,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
 		gameWorld = new GameWorld(500,500);
 		renderer = new GameRenderer(gameWorld);
 		gameController = new GameController(gameWorld, renderer);
@@ -32,6 +30,5 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void dispose () {
 		batch.dispose();
-		img.dispose();
 	}
 }
